@@ -1,6 +1,6 @@
 # `znap prompt` makes your prompt visible in just 15-40ms!
 # if [ -x "$(command -v starship)" ]; then
-#     znap eval starship 'starship init zsh'
+#     znap eval starship 'starship init zsh --print-full-init'
 # else
 #     znap prompt sindresorhus/pure
 # fi

@@ -47,4 +47,4 @@ compctl -K _fuck fuck
 
 # Here we include the full path to a command. Since that path includes a
 # version number, the cache will be invalidated when that changes.
-znap eval asdf-community/asdf-direnv "asdf exec $( asdf which direnv ) hook zsh"
+znap eval asdf-community/asdf-direnv "asdf exec $(asdf which direnv) hook zsh"
