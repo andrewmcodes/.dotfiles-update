@@ -6,7 +6,7 @@
 # fi
 
 if [ $TERM_PROGRAM != "Apple_Terminal" ]; then
-  znap eval oh-my-posh 'oh-my-posh init zsh --config ~/.dotfiles/zsh/theme/spaceship.omp.json'
+  znap eval oh-my-posh 'oh-my-posh init zsh --config ~/.dotfiles/zsh/theme/andrewmcodes.omp.json'
 else
   znap prompt sindresorhus/pure
 fi

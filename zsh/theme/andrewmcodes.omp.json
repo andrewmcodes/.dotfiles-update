@@ -5,13 +5,19 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "path",
-          "foreground": "cyan",
+          "foreground": "#E06C75",
+          "style": "plain",
+          "template": "root <#ffffff>in</> ",
+          "type": "root"
+        },
+        {
+          "foreground": "#55B9C4",
           "properties": {
             "style": "folder"
           },
           "style": "plain",
-          "template": "{{ .Path }} "
+          "template": "{{ .Path }} ",
+          "type": "path"
         },
         {
           "foreground": "#C678DD",
@@ -19,9 +25,21 @@
             "fetch_status": true
           },
           "style": "plain",
-          "template": "<#ffffff>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+          "template": "<#F3EFF5>on</> {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
           "type": "git"
         },
+        {
+          "foreground": "#C94A16",
+          "style": "plain",
+          "template": "x ",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
         {
           "type": "ruby",
           "foreground": "#ff6369",
@@ -30,22 +48,20 @@
             "home_enabled": true,
             "display_mode": "always"
           },
-          "template": "<#ffffff>via</> \uE791 {{ .Full }} "
+          "template": "\uE791 {{ .Full }} "
         },
         {
-          "type": "node",
+          "foreground": "#98C379",
           "properties": {
             "fetch_version": true,
             "fetch_package_manager": true,
-            "home_enabled": true,
             "display_mode": "always",
-            "npm_icon": " <#cc3a3a>\ue5fa</> ",
+            "home_enabled": true,
             "yarn_icon": " <#348cba>\uf61a</>"
           },
           "style": "plain",
-          "powerline_symbol": "\uE0B0",
-          "foreground": "#87be22",
-          "template": "<#ffffff>via</>{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}\uE718 {{ .Full }} "
+          "template": " \ue781 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "type": "node"
         }
       ],
       "type": "prompt"
@@ -55,15 +71,14 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "lightGreen",
+          "foreground": "#63F08C",
           "style": "plain",
-          "template": "\u276f",
+          "template": "\u279c ",
           "type": "text"
         }
       ],
       "type": "prompt"
     }
   ],
-  "final_space": true,
   "version": 2
 }
