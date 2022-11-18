@@ -1,0 +1,98 @@
+[user]
+	name = Andrew Mason
+	email = andrewmcodes@protonmail.com
+  signingkey = EDF0D4B849DE7D4F
+[credential]
+	helper = osxkeychain
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = code --wait
+[alias]
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+	hist = log --graph --pretty=format:'%Cred%h%Creset %s%C(yellow)%d%Creset %Cgreen(%cr)%Creset [%an]' --abbrev-commit --date=relative
+	c = commit
+	s = status
+	ch = checkout
+[color]
+	ui = auto
+[color "branch"]
+	current = 14 normal
+	local = 14 normal dim
+	remote = 13 normal dim
+	plain = 14 normal dim
+	upstream = 13 normal
+[color "diff"]
+	meta = 8 normal
+	frag = 8 normal ul
+	old = 9 normal dim
+	new = 10 normal
+	commit = 3 normal
+	newMoved = 14 normal
+	oldMovedAlternativeDimmed = 4 normal dim
+	oldMovedAlternative = 12 normal dim
+	contextBold = normal bold
+	newBold = 10 normal bold
+	context = normal
+	oldMoved = 14 normal dim
+	oldBold = 9 normal dim bold
+	newMovedDimmed = 6 normal
+	func = 8 normal ul
+	newDimmed = 2 normal
+	newMovedAlternative = 12 normal
+	newMovedAlternativeDimmed = 4 normal
+	whitespace = normal 9
+	oldMovedDimmed = 6 normal dim
+	oldDimmed = 1 normal dim
+[color "status"]
+	added = 10 normal
+	changed = 11 normal
+	untracked = normal dim
+	branch = 14 normal
+	updated = 10 normal
+	localbranch = 14 normal
+	header = normal
+	remotebranch = 13 normal
+	nobranch = 1 normal italic
+	unmerged = 9 normal
+[push]
+	default = simple
+	followTags = true
+	autoSetupRemote = true
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[credential]
+	helper = cache --timeout=86400
+[color "remote"]
+	hint = normal dim
+	success = 2 normal
+	error = 1 normal
+	warning = 3 normal
+[color "interactive"]
+	header = 8 normal bold
+	prompt = 15 4
+	help = 8 normal
+	error = 1 normal italic
+[color "decorate"]
+	branch = 14 normal
+	tag = 3 normal
+	remotebranch = 13 normal
+	stash = 8 normal
+	grafted = 1 normal italic
+	HEAD = 14 normal dim
+[diff]
+	colorMoved = zebra
+[maintenance]
+	repo = /Users/andrew.mason/git/plugins/asdf
+	repo = /Users/andrew.mason/git/plugins/pure
+	repo = /Users/andrew.mason/git/plugins/zcolors
+	repo = /Users/andrew.mason/git/plugins/zsh-autocomplete
+	repo = /Users/andrew.mason/git/plugins/zsh-autosuggestions
+	repo = /Users/andrew.mason/git/plugins/zsh-hist
+	repo = /Users/andrew.mason/git/plugins/zsh-snap
+	repo = /Users/andrew.mason/git/plugins/zsh-syntax-highlighting
+	repo = /Users/andrew.mason/git/plugins/zsh-z
+	repo = /Users/andrew.mason/git/plugins/.tmux
