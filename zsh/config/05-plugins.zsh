@@ -4,24 +4,33 @@
 # Plugins
 #
 
+# zsh-users/zsh-autosuggestions
+ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=()
+ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=( forward-char forward-word end-of-line )
+ZSH_AUTOSUGGEST_STRATEGY=( history )
+ZSH_AUTOSUGGEST_HISTORY_IGNORE=$'(*\n*|?(#c80,)|*\\#:hist:push-line:)'
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
+
 # Add the plugins you want to use here.
-# For more info each plugin, visit its repo on github.com/<plugin>
 # -a sets the variable's type to array.
 local -a plugins=(
   asdf-vm/asdf
-  marlonrichert/zsh-autocomplete    # Real-time type-ahead completion
+  marlonrichert/zsh-autocomplete    # Real-time type-ahead completion. https://github.com/marlonrichert/zsh-autocomplete
   agkozak/zsh-z                     # Quickly jump to previously visited directories.
   marlonrichert/zsh-hist            # Edit history from the command line.
   marlonrichert/zcolors             # Colors for completions and Git
-  zsh-users/zsh-autosuggestions     # Inline suggestions
+  zsh-users/zsh-autosuggestions     # Inline suggestions. https://github.com/zsh-users/zsh-autosuggestions
   zsh-users/zsh-syntax-highlighting # Command-line syntax highlighting
 )
+
+# Auto-installed by Brew, but far worse than the one supplied by Zsh
+rm -f $HOMEBREW_PREFIX/share/zsh/site-functions/_git{,.zwc}
 
 # https://github.com/marlonrichert/zsh-autocomplete/blob/main/.zshrc
 zstyle ':autocomplete:*' min-input 1
 
-# Speed up the first startup by cloning all plugins in parallel.
-# This won't clone plugins that we already have.
+# Speed up the first startup by cloning all plugins in parallel, except the plugins that we already have.
 znap clone $plugins
 
 # Load each plugin, one at a time.
@@ -35,8 +44,6 @@ autoload -Uz init
 autoload -Uz mkcd
 autoload -Uz toggle_desktop_icons
 autoload -Uz ghlabels
-
-# export GPG_TTY=$(tty)
 
 # `znap eval <name> '<command>'` is like `eval "$( <command> )"` but with
 # caching and compilation of <command>'s output, making it ~10 times faster.

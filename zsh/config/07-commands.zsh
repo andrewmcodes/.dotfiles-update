@@ -72,8 +72,16 @@ alias hrc=" heroku run rails c"
 alias la='ls -A'
 alias l='ls -alFtr'
 alias ls='ls -G'
+
+# History
 alias h='history | tail'
 alias hg='history | grep'
+
+# Diff
+alias diff='diff --color'
+
+# Grep
+alias grep='grep --color'
 
 # Ruby gems
 alias {gi,gemi}='gem install'
@@ -113,3 +121,19 @@ READNULLCMD=$PAGER
 
 # Print the number of characters in the PATH variable
 # echo $PATH | wc -c
+
+# Safer alternatives to `rm`
+if [[ $VENDOR == apple ]]; then
+  trash() {
+    local -aU items=( $^@(N) )
+    local -aU missing=( ${@:|items} )
+    (( $#missing )) &&
+        print -u2 "trash: no such file(s): $missing"
+    (( $#items )) ||
+        return 66
+    print Moving $( eval ls -d -- ${(q)items[@]%/} ) to Trash.
+    items=( '(POSIX file "'${^items[@]:a}'")' )
+    osascript -e 'tell application "Finder" to delete every item of {'${(j:, :)items}'}' \
+        > /dev/null
+  }
+fi

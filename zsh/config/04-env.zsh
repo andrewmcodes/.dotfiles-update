@@ -6,11 +6,16 @@
 
 export LANG=en_US.UTF-8
 
+export YARN_GLOBAL=$(yarn global bin)
+export HOMEBREW_COLOR=1 HOMEBREW_BAT=1
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$HOMEBREW_PREFIX/opt/openssl@1.1"
+export EDITOR="code --wait"
+export DISABLE_SPRING=true
+# export GPG_TTY=$(tty)
+
 # -U ensures each entry in these is Unique (that is, discards duplicates).
 export -U PATH path FPATH fpath MANPATH manpath
 export -UT INFOPATH infopath  # -T creates a "tied" pair; see below.
-
-YARN_GLOBAL=$(yarn global bin)
 
 # $PATH and $path (and also $FPATH and $fpath, etc.) are "tied" to each other.
 # Modifying one will also modify the other.
@@ -42,9 +47,3 @@ if command -v brew > /dev/null; then
   # only for those commands that zsh doesn't already know how to complete.
   fpath+=( $HOMEBREW_PREFIX/share/zsh/site-functions )
 fi
-
-export HOMEBREW_COLOR=1
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$HOMEBREW_PREFIX/opt/openssl@1.1"
-export EDITOR="code --wait"
-export DISABLE_SPRING=true
-# export GPG_TTY=$(tty)

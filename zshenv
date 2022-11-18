@@ -14,3 +14,13 @@
 # To set a default value that is returned *without* setting X, use ${X:-Y}
 # As in other shells, ~ expands to $HOME _at the beginning of a value only._
 ZDOTDIR=${XDG_CONFIG_HOME:=~/.dotfiles}/zsh
+
+# These are used in /etc/zshrc
+case $VENDOR in
+  ( apple )
+    export SHELL_SESSIONS_DISABLE=1
+  ;;
+  ( ubuntu )
+    export skip_global_compinit=1
+  ;;
+esac

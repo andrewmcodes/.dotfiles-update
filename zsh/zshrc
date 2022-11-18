@@ -18,9 +18,9 @@
   # <-> is an open-ended range. It matches any non-negative integer.
   # <1-> matches any integer >= 1. <-9> matches any integer <= 9.
   # <1-9> matches any integer that's >= 1 and <= 9.
-  local file=
-  for file in $ZDOTDIR/config/<->-*.zsh(n); do
-    . $file
+  local __file__=
+  for __file__ in $ZDOTDIR/config/<->-*.zsh; do
+    . $__file__
   done
 } "$@"
 # $@ expands to all the arguments that were passed to the current context (in
