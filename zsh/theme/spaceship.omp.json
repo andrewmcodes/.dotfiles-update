@@ -1,0 +1,69 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "path",
+          "foreground": "cyan",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "plain",
+          "template": "{{ .Path }} "
+        },
+        {
+          "foreground": "#C678DD",
+          "properties": {
+            "fetch_status": true
+          },
+          "style": "plain",
+          "template": "<#ffffff>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+          "type": "git"
+        },
+        {
+          "type": "ruby",
+          "foreground": "#ff6369",
+          "style": "plain",
+          "properties": {
+            "home_enabled": true,
+            "display_mode": "always"
+          },
+          "template": "<#ffffff>via</> \uE791 {{ .Full }} "
+        },
+        {
+          "type": "node",
+          "properties": {
+            "fetch_version": true,
+            "fetch_package_manager": true,
+            "home_enabled": true,
+            "display_mode": "always",
+            "npm_icon": " <#cc3a3a>\ue5fa</> ",
+            "yarn_icon": " <#348cba>\uf61a</>"
+          },
+          "style": "plain",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#87be22",
+          "template": "<#ffffff>via</>{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}\uE718 {{ .Full }} "
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "lightGreen",
+          "style": "plain",
+          "template": "\u276f",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}

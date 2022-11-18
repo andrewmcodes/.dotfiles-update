@@ -1,0 +1,2 @@
+[ -d "/opt/homebrew" ] && HOMEBREW_PREFIX="/opt/homebrew" || HOMEBREW_PREFIX="/usr/local"
+eval "$($HOMEBREW_PREFIX/bin/brew shellenv)"
